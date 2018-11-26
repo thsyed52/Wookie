@@ -1,0 +1,125 @@
+{{!-- <div id="tt-pageContent">
+    <div class="container-indent">
+        <div class="container">
+            <h1 class="tt-title-subpages noborder">Checkout</h1>
+            <h4 class="tt-title-subpages noborder">The Total Price is {{totalPrice}}$</h4>c
+            <div class="tt-login-form">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="tt-item">
+                            <h2 class="tt-title">PERSONAL INFORMATION</h2>
+                            <div class="form-default">
+                                <form id="checkout-form" action="/checkout" method="post">
+                                    <div class="form-group">
+                                        <label for="Name">NAME *</label>
+                                        <div class="tt-required">* Required Fields</div>
+                                        <input type="text" name="name" class="form-control" id="Name" placeholder="Enter Name"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Adress">Adress *</label>
+                                        <input type="text" name="Adress" class="form-control" id="Adress" placeholder="Enter Adress"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="creditNo">Credit Card Number *</label>
+                                        <input type="text" name="creditNo" class="form-control" id="creditNo"
+                                            placeholder="Enter Credit Cart Number" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ExpirationMonth">Expiration Month *</label>
+                                        <input type="date" name="ExpirationMonth" class="form-control" id="ExpirationMonth"
+                                            required>
+                                        <label for="ExpirationYear">Expiration Year *</label>
+                                        <input type="date" name="ExpirationYear" class="form-control" id="ExpirationYear"
+                                            required>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="CVC">CVC *</label>
+                                <input type="text" name="CVC" class="form-control" id="CVC" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="form-group">
+                                        <button class="btn btn-border" type="submit">CREATE</button>
+                                    </div>
+                                </div>
+                                <div class="col-auto align-self-center">
+                                    <div class="form-group">
+                                        <ul class="additional-links">
+                                            <li>or <a href="/">Return to Store</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="javascripts/checkout.js"></script>
+--}}
+
+<div class="alert alert-danger" {{# if noError}} hidden {{/if}}>
+    {{errMsg}}
+</div>
+
+
+
+
+
+
+
+
+<div id="tt-pageContent">
+    <div class="container-indent">
+        <div class="container">
+            <h1 class="tt-title-subpages noborder">Checkout</h1>
+            <h4 class="tt-title-subpages noborder">The Total Price is {{totalPrice}}$</h4>c
+            <div class="tt-login-form">
+                <div class="row justify-content-center">
+                    <div class="col-md-2 col-lg-2">
+                        <form action="/checkout" method="POST">
+                            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_lNEs4QZr5vEhsYho1S4m4XpI"
+                                data-amount="{{totalStripePrice}}" data-name="Demo Site" data-description="Example charge"
+                                data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto"
+                                data-currency="usd">
+                                </script>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{{!--
+<div id="tt-pageContent">
+    <div class="container-indent">
+        <div class="container">
+            <h1 class="tt-title-subpages noborder">Checkout</h1>
+            <h4 class="tt-title-subpages noborder">The Total Price is {{totalPrice}}$</h4>
+
+            <form action="/checkout" method="POST">
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_lNEs4QZr5vEhsYho1S4m4XpI"
+                    data-amount="{{totalStripePrice}}" data-name="Demo Site" data-description="Example charge"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto"
+                    data-currency="usd">
+                    </script>
+            </form>
+
+        </div>
+    </div>
+</div> --}}

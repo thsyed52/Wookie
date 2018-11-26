@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>User Profile</h1>
+        <h2>My Orders
+        </h2>
+        {{!-- <div>
+            <p>Item Start</p>
+        </div> --}}
+        {{# each orders}}
+        <div class="card" style="width: 100%">
+
+            <ul class="list-group">
+
+                {{# each this.cart.items}}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{this.item.title}} | {{this.qty}} Units
+                    <span class="badge badge-primary badge-pill">{{this.price}}$</span>
+
+                </li>
+                {{/each}}
+            </ul>
+
+            {{!-- <div>Item End total Price {{this.cart.totalPrice}}</div> --}}
+            <div class="card-body"><strong>Total Price= {{this.cart.totalPrice}}$</strong></div>
+        </div>
+        <br>
+        {{/each}}
+
+
+        </h2>
+    </div>
+</div>
