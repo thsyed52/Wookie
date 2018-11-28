@@ -31,6 +31,7 @@
         $ttMobileParentSearch = $ttHeader.find('.tt-mobile-parent-search'),
         $ttStuckParentSearch = $ttHeader.find('.tt-stuck-parent-search'),
         $ttSearchObjPopupInput = $ttSearchObj.find('.tt-search-input'),
+        
         $ttSearchObjPopupResults = $ttSearchObj.find('.search-results'),
         //header cart
         $ttcartObj = $ttHeader.find('.tt-cart'),
@@ -100,7 +101,7 @@
         // main slider "Slick" - full width and container (* index-slick-slider.html)
         ttSlickSlider: $ttPageContent.find('.tt-slick-slider'),
     };
-
+    
     var ttwindowWidth = window.innerWidth || $window.width();
 
     // main slider "Slick" - full height and full width (* index-slick-slider.html)
@@ -488,6 +489,7 @@
 
     // header, search, at focus input - result of search
     if ($ttSearchObjPopupInput.length && $ttSearchObjPopupResults.length) {
+        // alert($ttSearchObjPopupInput);
          $ttSearchObj.on("input",function(ev){
             if($(ev.target).val()){
                 $ttSearchObjPopupResults.fadeIn("200");
@@ -1020,7 +1022,7 @@
                 target = e.target,
                 objSearch = $('.tt-search'),
                 objSearchInput = objSearch.find('.tt-search-input');
-
+                // alert(objSearchInput);
             // search
             if ($this.hasClass('tt-search') && $('.tt-dropdown-toggle').is(target)){
                 searchPopup();

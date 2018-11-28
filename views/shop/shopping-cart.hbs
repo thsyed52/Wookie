@@ -10,7 +10,7 @@
                         <tr>
                             <td>
                                 <div class="tt-product-img">
-                                    <img src="images/loader.svg" data-src="images/product/product-01.jpg" alt="">
+                                    <img src="images/loader.svg" data-src="{{this.item.imagePath}}" alt="">
                                 </div>
                             </td>
                             <td>
@@ -87,13 +87,13 @@
                                 <tbody>
                                     <tr>
                                         <th>SUBTOTAL</th>
-                                        <td>{{totalPrice}}</td>
+                                        <td>{{totalPrice}} $</td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>GRAND TOTAL</th>
-                                        <td>{{totalPrice}}</td>
+                                        <td>{{totalPrice}} $</td>
                                     </tr>
                                 </tfoot>
                             </table>

@@ -1,0 +1,71 @@
+<div id="tt-pageContent">
+
+   
+    <div class="container nomargin">
+         <h1 class="tt-box-text">Search Result</h1>
+        {{# if products}}
+        <div class="row tt-layout-product-item">
+
+
+            {{# each products}}
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="tt-product thumbprod-center">
+                    <div class="tt-image-box">
+                        {{!-- <a href="#" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"
+                            data-tooltip="Quick View" data-tposition="left"></a>
+                        <a href="#" class="tt-btn-wishlist" data-tooltip="Add to Wishlist" data-tposition="left"></a>
+                        <a href="#" class="tt-btn-compare" data-tooltip="Add to Compare" data-tposition="left"></a>
+                        <a href="product.html"> --}}
+                            <span class="tt-img"><img src="images/loader.svg" data-src="{{this.imagePath}}" alt=""></span>
+                            <span class="tt-img-roll-over"><img src="images/loader.svg" data-src="{{this.imagePath2}}"
+                                    alt=""></span>
+                            <span class="tt-label-location">
+                                <span class="tt-label-new">New</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="tt-description">
+                        <div class="tt-row">
+                            <ul class="tt-add-info">
+                                <li><a href="#">{{this.category}}</a></li>
+                            </ul>
+                            <div class="tt-rating">
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star-half"></i>
+                                <i class="icon-star-empty"></i>
+                            </div>
+                        </div>
+                        <h2 class="tt-title"><a href="product.html">{{this.title}}</a></h2>
+                        <div class="tt-price">
+                            {{this.price}}$
+                        </div>
+                        <div class="tt-product-inside-hover">
+                            <div class="tt-row-btn">
+                                <a href="/add-to-cart/{{this._id}}" class="tt-btn-addtocart thumbprod-button-bg" role="button">ADD
+                                    TO CART</a>
+                                {{!-- <a href="/add-to-cart/{{this._id}}" class="btn btn-success">Buy</a> --}}
+                            </div>
+                            <div class="tt-row-btn">
+                                <a href="#" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+                                <a href="#" class="tt-btn-wishlist"></a>
+                                <a href="#" class="tt-btn-compare"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{else}}
+        <div class="container container-fluid-custom-mobile-padding">
+            <div class="tt-block-title">
+                <h1 class="tt-title">Sorry</h1>
+                <div class="tt-description">No Products Found</div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>

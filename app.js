@@ -58,6 +58,7 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use('/cat', express.static(path.join(__dirname, 'public')), indexRouter);
 app.use('/user', express.static(path.join(__dirname, 'public')), userRouter);
 app.use('/', indexRouter);
 
